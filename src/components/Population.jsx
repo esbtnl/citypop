@@ -1,4 +1,9 @@
 import "../css/population.css"
+import searchAPI from "../services/searchAPI"
+
+const getPopulation = (city) => {
+    return searchAPI(city, false)
+  }
 
 const Population = (props) => {
     console.log(props.search.label)
