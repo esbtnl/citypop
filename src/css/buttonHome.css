@@ -8,3 +8,7 @@
 .button {
     width: 95%
 }
+
+.button h1 {
+    font-family: monospace;
+}
