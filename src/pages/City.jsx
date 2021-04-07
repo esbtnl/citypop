@@ -1,3 +1,4 @@
+import "../css/city.css"
 
 const City = () => {
     return (

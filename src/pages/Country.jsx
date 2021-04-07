@@ -1,3 +1,4 @@
+import "../css/country.css"
 
 const Country = () => {
     return (

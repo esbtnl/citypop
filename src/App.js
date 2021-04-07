@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 import WebRouter from "./components/WebRouter"
 
 function App() {
