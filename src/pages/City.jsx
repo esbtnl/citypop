@@ -9,7 +9,7 @@ const getPopulation = (name) => {
 }
 const City = () => {
     const [ infoShow, setInfoShow] = useState(false)
-    const [ city, setCity ] = useState([])
+    const [ city, setCity ] = useState({name: "Penis", population: "69"})
     const toggleInfo = () => {
         setInfoShow(!infoShow)
     }
@@ -25,14 +25,9 @@ const City = () => {
 
     return (
     <div className="city-container">
-        <h1>City</h1>
         {infoShow ? 
         <div className="info">
-            <button onClick={toggleInfo}>Back to search</button>
-            <ul>
-                <Population city={city}></Population>
-            </ul>               
-
+            <Population city={city} toggleInfo={toggleInfo}></Population>
         </div>
         :
         <div className="search">

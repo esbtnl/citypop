@@ -1,6 +1,5 @@
 import city from "../res/city.jpg"
 import map from "../res/map.jpg"
-
 import "../css/buttonHome.css"
 
 const buttons = [
@@ -14,15 +13,11 @@ const buttons = [
     },
 ];
 
-const ButtonHome = () => {
+export default function ButtonHome() {
     return (
     <div className="buttons-container">
         {buttons.map((image) => (
-            <div className="button">
-                <h1>{image.title}</h1>
-                <a href={image.title}><img src={image.url} alt={image.title} className="button" /></a>
-            </div>
+            <a href={image.title}><button className="selectButton">Search by {image.title}</button></a>
         ))}
     </div>)
 }
-export default ButtonHome

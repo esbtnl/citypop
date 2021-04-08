@@ -1,0 +1,29 @@
+.form-container {
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 3vw;
+}
+#searchBar {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #073628;
+    border-radius: 1vw;
+    box-sizing: border-box;
+    resize: vertical;    
+    font-size: 3vw;
+}
+#searchBtn {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    border: 1px solid #073628;
+    padding: 10px;
+    margin-top: 5%;
+}
+
+@media (max-width: 768px){
+    #searchButton {
+        width: 70px;
+        height: 70px;
+    }
+}

@@ -1,14 +1,29 @@
 .buttons-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     margin-left: 5%;
     margin-right: 5%;
+    
 }
-.button {
-    width: 95%
+.selectButton {
+    width: 40vw;
+    height: 30vh;
+    font-size: 3vw;
+    border-radius: 2vw;
+    background-color: #0E7556;
+    color: #58EFC1;
+    border: 3px solid #073628;
+    cursor: pointer;
 }
 
-.button h1 {
-    font-family: monospace;
+@media (max-width: 768px){
+    .buttons-container {
+        flex-direction: column;
+    }
+    .selectButton {
+        width: 75vw;
+        margin-top: 5%;
+        
+    }
 }

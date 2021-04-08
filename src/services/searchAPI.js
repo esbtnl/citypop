@@ -10,8 +10,6 @@ function API_data(data){
 }
 
 async function searchAPI(search, country) {
-  console.log("Search API")
-  console.log("SEARCH: " + search.value)
   var response = ""
   if(country){
     response = await fetch(URL + "&country=" + search.value)

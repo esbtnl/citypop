@@ -4,6 +4,7 @@ import WebRouter from "./components/WebRouter"
 function App() {
   return (
     <div className="App">
+      <h1>City Pop</h1>
       <WebRouter></WebRouter>
     </div>
   );

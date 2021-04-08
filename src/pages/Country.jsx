@@ -1,9 +1,8 @@
-import "../css/country.css"
 import CountrySelector from "../components/CountrySelector"
 import Population from "../components/Population"
-import { useState } from "react"
+import React, { useState } from "react"
 import searchAPI from "../services/searchAPI"
-
+import "../css/country.css"
 
 const getCitys  = (country) => {
     return searchAPI(country, true)
@@ -37,25 +36,38 @@ const Country = () => {
     }
     return (
     <div className="country-container">
-        <h1>Country</h1>
         {cityShow ? 
 
             (populationShow ?
-            <div className="population">
-                <button onClick={togglePopulation}>Back to citys</button>
-                <Population city={city}></Population>
+            <div className="pop-container">
+                <Population city={city} toggleInfo={togglePopulation}></Population>
             </div>
             :
-            <div className="info">
-                <button onClick={toggleCitys}>Back to search</button>
-                <h1>{search.label}</h1>
-                <ul>{cityList.map(city => <li key={city.id}><button onClick={() => handleSelect(city)}>{city.name}</button></li>)}</ul>               
-            </div>)
+            <div classname="info-container">
+                <div className="info">
+                    <button 
+                        onClick={toggleCitys} 
+                        className="backBtn">
+                            Back to search
+                    </button>
+                    <h1>{search.label}</h1>
+                    <ul>{cityList.map(city => 
+                        <li key={city.id}>
+                            <button 
+                                onClick={() => handleSelect(city)} 
+                                className="countryBtn">{city.name}
+                            </button>
+                        </li>)}
+                    </ul>               
+                </div>
+            </div>
+            )
             :
             <div className="search">
-                <CountrySelector handleSearch={handleSearch} toggleInfo={toggleCitys}></CountrySelector>
+                <CountrySelector 
+                    handleSearch={handleSearch} 
+                    toggleInfo={toggleCitys}/>
             </div>
-        
         }
     </div>
     )
