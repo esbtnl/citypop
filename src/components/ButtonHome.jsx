@@ -20,7 +20,7 @@ const ButtonHome = () => {
         {buttons.map((image) => (
             <div className="button">
                 <h1>{image.title}</h1>
-                <a href={image.title}><img src={image.url} alt={image.title} className="button"/></a>
+                <a href={image.title}><img src={image.url} alt={image.title} className="button" /></a>
             </div>
         ))}
     </div>)

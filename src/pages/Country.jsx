@@ -10,31 +10,50 @@ const getCitys  = (country) => {
 }
 
 const Country = () => {
-    const [ infoShow, setInfoShow ] = useState(false)
+    const [ cityShow, setCityShow ] = useState(false)
+    const [ populationShow, setPopulationShow ] = useState(false)
+
     const [ search, setSearch ] = useState("")
     const [ cityList, setCityList ] = useState([])
+    const [ city, setCity ] = useState([])
+
     const handleSearch = (country) => {
         setSearch(country)
         getCitys(country).then(result => {
             setCityList(result.sort(function(a, b){return b.population - a.population}).slice(0,3))
         })
     }
-    const toggleInfo = () => {
-        setInfoShow(!infoShow)
+    const handleSelect = (city) => {
+        setCity(city)
+        console.log(city)
+        togglePopulation()
+    }
+    const toggleCitys = () => {
+        setCityShow(!cityShow)
     }
 
+    const togglePopulation = () => {
+        setPopulationShow(!populationShow)
+    }
     return (
     <div className="country-container">
         <h1>Country</h1>
-        {infoShow ? 
-            <div className="info">
-                <button onClick={toggleInfo}>Back to search</button>
-                <h1>{search.label}</h1>
-                <ul>{cityList.map(city => <li key={city.id}><button>{city.name}</button></li>)}</ul>               
+        {cityShow ? 
+
+            (populationShow ?
+            <div className="population">
+                <button onClick={togglePopulation}>Back to citys</button>
+                <Population city={city}></Population>
             </div>
             :
+            <div className="info">
+                <button onClick={toggleCitys}>Back to search</button>
+                <h1>{search.label}</h1>
+                <ul>{cityList.map(city => <li key={city.id}><button onClick={() => handleSelect(city)}>{city.name}</button></li>)}</ul>               
+            </div>)
+            :
             <div className="search">
-                <CountrySelector handleSearch={handleSearch} toggleInfo={toggleInfo}></CountrySelector>
+                <CountrySelector handleSearch={handleSearch} toggleInfo={toggleCitys}></CountrySelector>
             </div>
         
         }

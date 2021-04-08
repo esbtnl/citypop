@@ -1,16 +1,12 @@
 import "../css/population.css"
-import searchAPI from "../services/searchAPI"
 
-const getPopulation = (city) => {
-    return searchAPI(city, false)
-  }
 
 const Population = (props) => {
-    console.log(props.search.label)
+    const { city } = props
     return(
         <div className="population-container">
-            <h1>{props.search.label}</h1>
-            <p>{props.search.value}</p>
+            <h1>{city.name}</h1>
+            <p>{city.population}</p>
         </div>
     )
 }

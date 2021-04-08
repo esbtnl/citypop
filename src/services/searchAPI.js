@@ -12,19 +12,14 @@ function API_data(data){
 async function searchAPI(search, country) {
   console.log("Search API")
   console.log("SEARCH: " + search.value)
+  var response = ""
   if(country){
-    const response = await fetch(URL + "&country=" + search.value)
-    const json = await response.json();
-    const data = await API_data(json);
-    return  data
-    //API_data(json.geonames).sort(function(a, b){return b.population - a.population}).slice(0,3)
-  
+    response = await fetch(URL + "&country=" + search.value)
   }else {
-    fetch(URL + "&name=" + search)
-    .then(response => response.json())
-    .then(data => {
-      console.log(data)
-    })
+    response = await fetch(URL + "&name=" + search)
   }
+  const json = await response.json();
+  const data = await API_data(json);
+  return data
 }
 export default searchAPI
