@@ -1,12 +1,13 @@
+import "../css/countrySelector.css"
 import { useMemo } from "react"
+import { FaSearch } from "react-icons/fa";
 import countryList from "react-select-country-list"
 import Select from "react-select"
-import "../css/countrySelector.css"
-import { FaSearch } from "react-icons/fa";
 
-
-export default function CountrySelector(props) {
-    const { handleSearch, toggleInfo } = props
+/**
+ * Component creating a form for selecting a country
+ */
+export default function CountrySelector({ handleSearch, toggleInfo }) {
     const options = useMemo(() => countryList().getData(), [])
     
     return (

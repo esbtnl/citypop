@@ -1,13 +1,16 @@
 import "../css/population.css"
 
-
-const Population = (props) => {
-    const { city, toggleInfo } = props
-
+/**
+ * Components showing a citys name and population
+ */
+const Population = ({ city, toggleInfo }) => {
+    /**
+     * Function setting spaces for every thousand in a big number
+     */
     function numberWithSpaces(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
-
+    
     return(
         <div className="population-container">
             <button onClick={toggleInfo} className="backBtn">Back to search</button>

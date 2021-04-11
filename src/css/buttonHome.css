@@ -4,17 +4,17 @@
     align-items: center;
     margin-left: 5%;
     margin-right: 5%;
-    
 }
 .selectButton {
-    width: 40vw;
+    width: 30vw;
     height: 30vh;
-    font-size: 3vw;
-    border-radius: 2vw;
+    font-size: 2vw;
+    border-radius: 0.5vw;
     background-color: #0E7556;
     color: #58EFC1;
     border: 3px solid #073628;
     cursor: pointer;
+    text-transform: uppercase;
 }
 
 @media (max-width: 768px){
@@ -24,6 +24,7 @@
     .selectButton {
         width: 75vw;
         margin-top: 5%;
+        font-size: 7vw;
         
     }
 }

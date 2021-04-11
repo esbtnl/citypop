@@ -1,23 +1,15 @@
-import city from "../res/city.jpg"
-import map from "../res/map.jpg"
-import "../css/buttonHome.css"
+import "../css/buttonHome.css";
 
-const buttons = [
-    {
-        url: city,
-        title: "City",
-    },
-    {
-        url: map,
-        title: "Country",
-    },
-];
-
+/**
+ * Component creating the buttons on the homescreen
+ */
 export default function ButtonHome() {
+    const buttons = ["city", "country"];
+
     return (
     <div className="buttons-container">
-        {buttons.map((image) => (
-            <a href={image.title}><button className="selectButton">Search by {image.title}</button></a>
+        {buttons.map((btn) => (
+            <a href={btn}><button className="selectButton">Search by {btn}</button></a>
         ))}
     </div>)
 }

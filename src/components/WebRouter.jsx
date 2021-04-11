@@ -4,6 +4,9 @@ import Home from "../pages/Home"
 import City from "../pages/City"
 import Country from "../pages/Country"
 
+/**
+ * Component handling navigation of pages from the url
+ */
 const WebRouter = () => (
     <Router>
       <Route exact path="/" component={Home}></Route>

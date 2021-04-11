@@ -1,21 +1,22 @@
-import CountrySelector from "../components/CountrySelector"
-import Population from "../components/Population"
+import "../css/country.css"
 import React, { useState } from "react"
 import searchAPI from "../services/searchAPI"
-import "../css/country.css"
+import CountrySelector from "../components/CountrySelector"
+import Population from "../components/Population"
 
-const getCitys  = (country) => {
-    return searchAPI(country, true)
-}
 
-const Country = () => {
+
+function Country () {
     const [ cityShow, setCityShow ] = useState(false)
     const [ populationShow, setPopulationShow ] = useState(false)
 
     const [ search, setSearch ] = useState("")
     const [ cityList, setCityList ] = useState([])
     const [ city, setCity ] = useState([])
-
+    
+    const getCitys  = (country) => {
+        return searchAPI(country, true)
+    }
     const handleSearch = (country) => {
         setSearch(country)
         getCitys(country).then(result => {
@@ -24,7 +25,6 @@ const Country = () => {
     }
     const handleSelect = (city) => {
         setCity(city)
-        console.log(city)
         togglePopulation()
     }
     const toggleCitys = () => {
@@ -37,13 +37,12 @@ const Country = () => {
     return (
     <div className="country-container">
         {cityShow ? 
-
             (populationShow ?
-            <div className="pop-container">
+            <div className="info">
                 <Population city={city} toggleInfo={togglePopulation}></Population>
             </div>
             :
-            <div classname="info-container">
+            <div className="info-container">
                 <div className="info">
                     <button 
                         onClick={toggleCitys} 

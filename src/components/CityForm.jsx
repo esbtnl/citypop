@@ -1,19 +1,19 @@
-import React from "react";
+import "../css/cityForm.css";
 import { useForm } from "react-hook-form";
 import { FaSearch } from "react-icons/fa";
 
-import "../css/cityForm.css"
-
-export default function CityForm(props) {
+/**
+ * Component creating the form searching for a city
+ */
+export default function CityForm({ onSubmit }) {
     const { register, handleSubmit } = useForm();
-    const { onSubmit } = props
 
     return(
         <div className="form-container">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("city")} placeholder="City" name="city" id="searchBar"/>
                 <br/>
-                <button type="submit" id="searchBtn"><FaSearch id="search " size={42}/></button>
+                <button type="submit" id="searchBtn"><FaSearch className="searchIcon"/></button>
             </form>
         </div>
 
