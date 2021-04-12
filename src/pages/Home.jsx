@@ -1,11 +1,13 @@
-import ButtonHome from "../components/ButtonHome"
-import "../css/home.css"
+import { ButtonHome } from '../components/ButtonHome'
+import '../css/home.css'
 
-const Home = () => {
-    return (
+/**
+ * Page component for the homescreen
+ */
+export const Home = () => {
+  return (
     <div className="home-container">
-        <ButtonHome></ButtonHome>
+      <ButtonHome></ButtonHome>
     </div>
-    )
+  )
 }
-export default Home
