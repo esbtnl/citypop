@@ -1,6 +1,7 @@
 import '../css/cityForm.css'
 import { useForm } from 'react-hook-form'
 import { FaSearch } from 'react-icons/fa'
+import PropTypes from 'prop-types'
 
 /**
  * Component creating the form searching for a city
@@ -19,4 +20,8 @@ export const CityForm = ({ onSubmit }) => {
       </form>
     </div>
   )
+}
+
+CityForm.propTypes = {
+  onSubmit: PropTypes.func,
 }

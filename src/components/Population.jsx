@@ -1,4 +1,5 @@
 import '../css/population.css'
+import PropTypes from 'prop-types'
 
 /**
  * Components showing a citys name and population
@@ -23,4 +24,9 @@ export const Population = ({ city, toggleInfo }) => {
       </div>
     </div>
   )
+}
+
+Population.propTypes = {
+  city: PropTypes.object,
+  toggleInfo: PropTypes.func,
 }

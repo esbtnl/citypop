@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 /**
  * Returns the relevant information from the API data
  */
@@ -8,11 +10,11 @@ const API_data = (data) => {
   return arrayData
 }
 
-async function searchAPI(search, country) {
+async function searchAPI(search, isCountry) {
   const URL =
     'http://api.geonames.org/searchJSON?username=weknowit&maxRows=30&featureClass=p'
   var response = ''
-  if (country) {
+  if (isCountry) {
     response = await fetch(URL + '&country=' + search.value)
   } else {
     response = await fetch(URL + '&name=' + search)
@@ -22,3 +24,8 @@ async function searchAPI(search, country) {
   return data
 }
 export default searchAPI
+
+searchAPI.propTypes = {
+  search: PropTypes.object,
+  isCountry: PropTypes.bool,
+}

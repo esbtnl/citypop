@@ -3,6 +3,7 @@ import { useMemo } from 'react'
 import { FaSearch } from 'react-icons/fa'
 import countryList from 'react-select-country-list'
 import Select from 'react-select'
+import PropTypes from 'prop-types'
 
 /**
  * Component creating a form for selecting a country
@@ -18,4 +19,9 @@ export const CountrySelector = ({ handleSearch, toggleInfo }) => {
       </button>
     </div>
   )
+}
+
+CountrySelector.propTypes = {
+  handleSearch: PropTypes.func,
+  toggleInfo: PropTypes.func,
 }
