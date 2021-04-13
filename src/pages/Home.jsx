@@ -1,5 +1,5 @@
-import { ButtonHome } from '../components/ButtonHome'
 import '../css/home.css'
+import { ButtonHome } from '../components/ButtonHome'
 
 /**
  * Page component for the homescreen

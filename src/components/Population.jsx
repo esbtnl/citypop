@@ -5,7 +5,7 @@ import '../css/population.css'
  */
 export const Population = ({ city, toggleInfo }) => {
   /**
-   * Function setting spaces for every thousand in a big number
+   * Function setting spaces for every thousand in a large number
    */
   const numberWithSpaces = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
